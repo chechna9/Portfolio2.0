@@ -1,48 +1,9 @@
 import React from "react";
 import Project from "../components/project";
 import { internetIcon,andoirdIcon } from "../utils/assets";
+import useProjects from "../hooks/useProjects";
 const Projects = () => {
-  interface link{
-    platformIcon:string,
-    link:string,
-  }
-  interface project {
-    name:string,
-    description:string,
-  imgLink: string,
-  links:Array<link>,
-  technologies: string,
-  }
-  const projects:Array<project> = [
-    {
-      name: "Chantech",
-      description:
-        "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
-      imgLink: "chantech.png",
-      links: [
-        {
-          platformIcon: "github.svg",
-          link: "https://github.com/chechna9/Chantech-flutterApp",
-        },
-      ],
-      technologies: "Flutter , NodeJs , MYSQL",
-    },
-    // {
-    //   name: "Chantech",
-    //   description:
-    //     "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
-    //   imgLink: "chantech.png",
-    //   links: [
-    //     {
-    //       platformIcon: "github.svg",
-    //       link: "https://github.com/chechna9/Chantech-flutterApp",
-    //     },
-    //   ],
-    //   technologies: "Flutter , NodeJs , MYSQL",
-    // },
-    
-    
-  ];
+  const {projects} = useProjects();
   return (
     <div className="bg-prim1">
       <div className="bg-prim2  py-10 rounded-tr-[200px] rounded-br-[200px] mr-10" id="projects">
