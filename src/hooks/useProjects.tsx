@@ -27,19 +27,19 @@ const useProjects = () => {
           ],
           technologies: "Flutter , NodeJs , MYSQL",
         },
-        // {
-        //   name: "Chantech",
-        //   description:
-        //     "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
-        //   imgLink: "chantech.png",
-        //   links: [
-        //     {
-        //       platformIcon: "github.svg",
-        //       link: "https://github.com/chechna9/Chantech-flutterApp",
-        //     },
-        //   ],
-        //   technologies: "Flutter , NodeJs , MYSQL",
-        // },
+        {
+          name: "Chantech",
+          description:
+            "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
+          imgLink: "chantech.png",
+          links: [
+            {
+              platformIcon: "github.svg",
+              link: "https://github.com/chechna9/Chantech-flutterApp",
+            },
+          ],
+          technologies: "Flutter , NodeJs , MYSQL",
+        },
         
         
       ];
