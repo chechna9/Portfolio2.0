@@ -11,6 +11,16 @@ const useExperiences = () => {
             title:"Participant at  Haick  23",
             description:"Datathon hosted by School of Ai Algiers",
         },
+        {
+            imgPath:myPict,
+            title:"Participant at  Haick  23",
+            description:"Datathon hosted by School of Ai Algiers",
+        },
+        {
+            imgPath:myPict,
+            title:"Participant at  Haick  23",
+            description:"Datathon hosted by School of Ai Algiers",
+        },
     ];
     return experiences;
 }

@@ -1,45 +1,44 @@
-import React from "react";
-import Project from "../components/project";
 import { brightness } from "../utils/assets";
-import useProjects from "../hooks/useProjects";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation,Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Experience from "../components/experience";
 import useExperiences from "../hooks/useExperiences";
 const Experiences = () => {
-    const listExperiences = useExperiences();
+  const listExperiences = useExperiences();
   return (
     <div className="bg-prim1">
-      <div className="bg-prim2  py-10 rounded-tr-[200px] rounded-br-[200px] mr-10" id="projects">
-          <div className="relative w-fit h-fit mb-8 mx-auto">
-           
-            <h1 className="text-white font-bold  text-4xl ">Some Wonderful Experiences</h1>
-            <img src={brightness} alt="" className="h-5 absolute -right-5 top-0"/>
-            </div>
-          
-              {/* <Swiper
-               pagination={{
-                dynamicBullets:true,
-                clickable:true,
-              }}
-
-              modules={[Navigation,Pagination]}
-              id="projects_swiper">
+      <div className="bg-prim2 h-screen py-10 rounded-tr-[200px] rounded-br-[200px] mr-10 flex flex-col ">
+        <div className="relative w-fit h-fit mb-8 mx-auto">
+          <h1 className="text-white font-bold  text-4xl ">
+            Some Wonderful Experiences
+          </h1>
+          <img
+            src={brightness}
+            alt=""
+            className="h-5 absolute -right-5 top-0"
+          />
+        </div>
+        <div className="w-[100%] m-auto">
+          <Swiper
             
-            </Swiper> */}
-        {
-            listExperiences.map(
-                (value,index)=>(
-                     <Experience expreience={value} />
-                )
-            )
-        }
-           
-          
-        
+            slidesPerView={1}
+            pagination={{
+              dynamicBullets: true,
+              clickable: true,
+            }}
+            modules={[Navigation, Pagination]}
+            navigation={true}
+          >
+            {listExperiences.map((value, index) => (
+              <SwiperSlide className="bg-slate-50">
+                <Experience expreience={value} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );
