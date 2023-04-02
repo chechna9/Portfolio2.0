@@ -20,16 +20,18 @@ const Certeficate: React.FC<certeficateProps> = (certeficateProps) => {
           />
         }
         modal={true}
-      >
+      > 
         <div className="relative m-5">
           <button className="absolute right-0 -translate-y-[100%]"
           onClick={()=> ref.current?.close()}
           >
             <AiOutlineCloseCircle color="red" />
           </button>
-
-          <img src={props.imgPath} alt="" className="" />
-        </div>
+         
+            <img src={props.imgPath} alt="" className="" />
+         
+          
+        </div> 
       </Popup>
     </div>
   );
