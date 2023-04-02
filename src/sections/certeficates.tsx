@@ -4,7 +4,7 @@ const Certeficates = () => {
     return ( 
         <div className="bg-prim2">
         <div className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center ml-10 rounded-bl-[200px] rounded-tl-[200px]" id="home">
-            <div>
+            <div className="w-52">
                 <Certeficate imgPath={dataCamp}/>
             </div>
          
