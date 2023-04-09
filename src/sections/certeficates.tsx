@@ -1,7 +1,7 @@
 import Certeficate from "../components/certeficate";
 import useCerteficates from "../hooks/useCerteficates";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { brain } from "../utils/assets";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -12,7 +12,16 @@ const Certeficates = () => {
   const certeficateList = useCerteficates();
   return (
     <div className="bg-prim2">
-      <div className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center ml-10 rounded-bl-[200px] rounded-tl-[200px] pl-9">
+      <div className="bg-prim1  py-10 rounded-tl-[200px] rounded-bl-[200px] ml-10">
+      <div className="relative w-fit h-fit mb-8 mx-auto">
+         
+          <h1 className="text-white font-bold  text-4xl ">Certeficates</h1>
+          <img
+            src={brain}
+            alt=""
+            className="h-5 absolute -left-6 top-0"
+          />
+        </div>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

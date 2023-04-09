@@ -1,19 +1,22 @@
 import useBio from "../hooks/useBio";
-import {handEmojie,myPict} from "../utils/assets";
+import { handEmojie, myPict } from "../utils/assets";
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   const bio = useBio();
   return (
-  <div className="bg-prim2">
-      <div className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center ml-10 rounded-bl-[200px]" id="home">
+    <div className="bg-prim2">
+      <div
+        className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center ml-10 rounded-bl-[200px]"
+        id="home"
+      >
         <div className=" flex flex-col justify-center ">
           <div className=" flex flex-row justify-center my-7 ">
             <h1 className="text-white font-bold text-3xl md:text-4xl">
               Hi I am Yacine
             </h1>
-            <img src={ handEmojie} alt="" className="ml-2 w-10 animate-waving" />
+            <img src={handEmojie} alt="" className="ml-2 w-10 animate-waving" />
           </div>
-  
+
           <img
             src={myPict}
             alt=""
@@ -27,40 +30,35 @@ const Home:React.FC = () => {
               {"{"}
             </h1>
           </div>
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col space-y-2 justify-center">
             <p className="text-white">
               <span className="text-blue-500">first_name : </span>
               {`"${bio.fname}"`} ,
             </p>
-            <br />
+
             <p className="text-white">
               <span className="text-blue-500">last_name : </span>
               {`"${bio.lname}"`} ,
             </p>
-            <br />
+
+            <p className="text-white">
+              <span className="text-blue-500">status : </span>
+              {`"${bio.status}"`} ,
+            </p>
+
             <p className="text-white">
               <span className="text-blue-500">skills : </span>
               {"["}
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.mob}"`} ,
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.web}"`} ,
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.uiux}"`} ,
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.ai}"`}
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.ds}"`}
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              {`"${bio.loading}"`}
-              <br />
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+              <div className="flex flex-wrap space-x-2">
+                <span>{`"${bio.mob}"`} ,</span>
+                <span>{`"${bio.web}"`} ,</span>
+                <span>{`"${bio.uiux}"`} ,</span>
+                <span>{`"${bio.ai}"`} ,</span>
+                <span>{`"${bio.ds}"`} ,</span>
+                <span>{`"${bio.loading}"`}</span>
+              </div>
+
               {"]"}
             </p>
           </div>
@@ -71,8 +69,8 @@ const Home:React.FC = () => {
           </div>
         </div>
       </div>
-  </div>
+    </div>
   );
 };
 
- export default Home; 
+export default Home;

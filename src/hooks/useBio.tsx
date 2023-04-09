@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 interface Bio {
   fname: string;
   lname: string;
+  status: string;
   mob: string;
   web: string;
   uiux: string;
@@ -11,11 +12,12 @@ interface Bio {
   loading: string;
 }
 const useBio = (): Bio => {
-  const counter = () => new Promise((resolve) => setTimeout(resolve, 50));
+  const counter = (timout?:number) => new Promise((resolve) => setTimeout(resolve,timout?? 50));
 
   const [bio, setBio] = useState<Bio>({
     fname: "",
     lname: "",
+    status: "",
     web: "",
     mob: "",
     uiux: "",
@@ -27,19 +29,21 @@ const useBio = (): Bio => {
   const fillIt = async () => {
     let _fname = "Ahmed Yacine";
     let _lname = "Bouchouareb";
+    let _status = "Artificial Intelligence & Data science student";
     let _mob = "Mobile Development";
     let _uiux = "UI/UX";
     let _web = "Web Development";
     let _ai = "Artificial Intelligence";
     let _ds = "Data Science";
-    let _loading = "Loading . . .";
-
+    let _loading = "Loading ...";
+  
     //incremental fill
     for (let i = 0; i <= _fname.length; i++) {
   
       setBio({
         fname:_fname.slice(0,i),
         lname: "",
+        status:"",
         web: "",
         mob: "",
         uiux: "",
@@ -53,8 +57,23 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname.slice(0,i),
+        status: "",
         web: "",
         mob: "",
+        uiux: "",
+        ai: "",
+        ds: "",
+        loading: "",
+      });
+      await counter();
+    }
+    for (let i = 0; i <= _status.length; i++) {
+      setBio({
+        fname:_fname,
+        lname: _lname,
+        status: _status.slice(0,i),
+        mob: "",
+        web: "",
         uiux: "",
         ai: "",
         ds: "",
@@ -66,6 +85,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob.slice(0,i),
         web: "",
         uiux: "",
@@ -79,6 +99,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob,
         web:  _web.slice(0,i),
         uiux: "",
@@ -92,6 +113,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob,
         web:  _web,
         uiux: _uiux.slice(0,i),
@@ -105,6 +127,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob,
         web:  _web,
         uiux: _uiux,
@@ -118,6 +141,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob,
         web:  _web,
         uiux: _uiux,
@@ -131,6 +155,7 @@ const useBio = (): Bio => {
       setBio({
         fname:_fname,
         lname: _lname,
+        status:_status,
         mob: _mob,
         web:  _web,
         uiux: _uiux,
@@ -140,6 +165,7 @@ const useBio = (): Bio => {
       });
       await counter();
     }
+   
   };
   useEffect(() => {
     fillIt();
