@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className="bg-prim2">
       <div
-        className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center ml-10 rounded-bl-[200px]"
+        className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center md:ml-10 ml-5 md:rounded-bl-[200px] rounded-bl-[100px]"
         id="home"
       >
         <div className=" flex flex-col justify-center ">

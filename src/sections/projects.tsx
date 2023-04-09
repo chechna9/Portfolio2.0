@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <div className="bg-prim1">
       <div
-        className="bg-prim2  py-10 rounded-tr-[200px] rounded-br-[200px] mr-10"
+        className="bg-prim2  py-10   md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px]"
         id="projects"
       >
         <div className="relative w-fit h-fit mb-8 mx-auto">

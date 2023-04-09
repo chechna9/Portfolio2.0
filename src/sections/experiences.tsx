@@ -10,7 +10,7 @@ const Experiences = () => {
   const listExperiences = useExperiences();
   return (
     <div className="bg-prim1">
-      <div className="bg-prim2 h-screen py-10 rounded-tr-[200px] rounded-br-[200px] mr-10 flex flex-col ">
+      <div className="bg-prim2 h-screen py-10 md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] flex flex-col ">
         <div className="relative w-fit h-fit mb-8 mx-auto">
           <h1 className="text-white font-bold  text-4xl ">
             Some Wonderful Experiences
