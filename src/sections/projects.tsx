@@ -3,7 +3,7 @@ import Project from "../components/project";
 import { internetIcon, andoirdIcon } from "../utils/assets";
 import useProjects from "../hooks/useProjects";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -26,11 +26,8 @@ const Projects = () => {
         </div>
 
         <Swiper
-          pagination={{
-            dynamicBullets: true,
-            clickable: true,
-          }}
-          modules={[Navigation, Pagination]}
+        navigation={true}       
+          modules={[Navigation]}
           id="projects_swiper"
         >
           {projects.map((value, index) => {

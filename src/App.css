@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+#projects_swiper .swiper-button-next,
+#projects_swiper .swiper-button-prev {
+  color: white;
+  scale: 0.75;
+}
