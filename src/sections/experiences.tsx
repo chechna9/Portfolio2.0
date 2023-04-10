@@ -1,18 +1,17 @@
 import { brightness } from "../utils/assets";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Experience from "../components/experience";
 import useExperiences from "../hooks/useExperiences";
 const Experiences = () => {
   const listExperiences = useExperiences();
   return (
     <div className="bg-prim1">
-      <div className="bg-prim2 h-screen py-10 md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] flex flex-col ">
+      <div className="bg-prim2 h-screen py-10 md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] relative">
         <div className="relative w-fit h-fit mb-8 mx-auto">
-          <h1 className="text-white font-bold  text-4xl ">
+          <h1 className="text-white font-bold  md:text-4xl sm:text-2xl text-xl">
             Some Wonderful Experiences
           </h1>
           <img
@@ -21,20 +20,19 @@ const Experiences = () => {
             className="h-5 absolute -right-5 top-0"
           />
         </div>
-        <div className="w-[100%] m-auto">
+        <div className=" w-full absolute  bottom-[50%] translate-y-[50%]">
           <Swiper
-            
+          
+            id="exprSwiper"
             slidesPerView={1}
-            pagination={{
-              dynamicBullets: true,
-              clickable: true,
-            }}
-            modules={[Navigation, Pagination]}
+            centeredSlides={true}
+            modules={[Navigation]}
             navigation={true}
+            
           >
             {listExperiences.map((value, index) => (
-              <SwiperSlide className="bg-slate-50">
-                <Experience expreience={value} />
+              <SwiperSlide key={index} >
+                <Experience expreience={value} key={index}/>
               </SwiperSlide>
             ))}
           </Swiper>

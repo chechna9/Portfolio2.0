@@ -10,16 +10,17 @@ const Experience: React.FC<experienceProps> = (experienceProps) => {
   const experience = experienceProps.expreience;
 
   return (
-    <div className="bg-prim1  rounded-3xl flex flex-col sm:flex-row space-x-3 text-white">
+    <div className="bg-prim1 rounded-3xl flex flex-col md:flex-row space-x-3  text-white md:w-[80vw] w-[50vw] pb-8 mx-auto max-w-3xl pr-2 ">
+      {/* image */}
       <img
         src={experience.imgPath}
         alt=""
-        className="rounded-3xl w-[30%] object-fill"
+        className="rounded-3xl md:w-[40%] w-[45vw] object-fill -translate-x-[10%] "
       />
-
-      <div className="flex flex-col pt-2">
-        <h3 className="font-bold">{experience.title}</h3>
-        <p>{experience.description}</p>
+      {/* event content */}
+      <div className="flex flex-col pt-2 text">
+        <h3 className="font-bold sm:text-2xl">{experience.title}</h3>
+        <p className="sm:text-xl mt-2">{experience.description}</p>
       </div>
     </div>
   );

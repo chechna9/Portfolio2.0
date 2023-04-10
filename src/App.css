@@ -42,3 +42,8 @@
   color: white;
   scale: 0.75;
 }
+#exprSwiper .swiper-button-next,
+#exprSwiper .swiper-button-prev {
+  color: white;
+  scale: 0.75;
+}

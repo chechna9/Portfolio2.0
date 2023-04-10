@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 const Projects = () => {
   const { projects } = useProjects();
   return (
@@ -32,8 +31,8 @@ const Projects = () => {
         >
           {projects.map((value, index) => {
             return (
-              <SwiperSlide>
-                <Project project={value} />
+              <SwiperSlide key={index}>
+                <Project project={value} key={index} />
               </SwiperSlide>
             );
           })}

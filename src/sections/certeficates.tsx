@@ -18,21 +18,21 @@ const Certeficates = () => {
           <img src={brain} alt="" className="h-5 absolute -left-6 top-0" />
         </div>
         
-          <div   className="absolute bottom-[50%] translate-y-[50%] w-full">
+          <div   className="absolute bottom-[50%] translate-y-[50%] w-full ">
             <Swiper 
-            
+             
               slidesPerView={1}
               spaceBetween={30}
               freeMode={true}
               modules={[FreeMode]}
             >
-              {certeficateList.map((page) => (
-                <SwiperSlide>
+              {certeficateList.map((page,pIdex) => (
+                <SwiperSlide key={pIdex}>
                   <div className="grid md:grid-rows-2 grid-rows-3 grid-flow-col">
                     {page.map((value, index) => (
                       <Certeficate imgPath={value.imgPath} key={index} />
                     ))}
-                  </div>{" "}
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
