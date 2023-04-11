@@ -39,10 +39,10 @@ const Projects = () => {
           </div>
         )}
         {!loading && (
-          <Swiper navigation={true} modules={[Navigation]} id="projects_swiper">
+          <Swiper navigation={true} modules={[Navigation]} id="projects_swiper" >
             {projects.map((value, index) => {
               return (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className=" m-auto">
                   <Project project={value} key={index} />
                 </SwiperSlide>
               );

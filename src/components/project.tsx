@@ -8,7 +8,7 @@ const Project:React.FC<projectProps> = (props:projectProps) => {
   const {project} = props;
   
   return (
-    <div className="flex md:flex-row flex-col justify-evenly items-center mt-[20vh] ">
+    <div className="flex md:flex-row flex-col justify-evenly items-center ">
       <img
         src={ project.imgLink}
         alt=""
