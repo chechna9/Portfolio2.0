@@ -14,7 +14,7 @@ const Projects = () => {
 
   useEffect(() => {
     useProjects.then((res) => {
-      setLoading(true);
+      setLoading(false);
       setProjects(res);
     });
   }, []);

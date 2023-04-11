@@ -1,16 +1,6 @@
 import React from "react";
+import project from "../utils/interfaces/projectInterface";
 
-interface link{
-  platformIcon:string,
-  link:string,
-}
-interface project {
-  name:string,
-  description:string,
-imgLink: string,
-links:Array<link>,
-technologies: string,
-}
 interface projectProps{
   project:project,
 }
@@ -20,7 +10,7 @@ const Project:React.FC<projectProps> = (props:projectProps) => {
   return (
     <div className="flex md:flex-row flex-col justify-evenly items-center mt-[20vh] ">
       <img
-        src={require("../assets/" + project.imgLink)}
+        src={ project.imgLink}
         alt=""
         className="md:w-[30vw] w-[60vw] max-w-sm mb-3 md:mb-0"
       />
