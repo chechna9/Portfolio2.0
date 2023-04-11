@@ -30,29 +30,28 @@ const Certeficates = () => {
           <h1 className="text-white font-bold  text-4xl ">Certeficates</h1>
           <img src={brain} alt="" className="h-5 absolute -left-6 top-0" />
         </div>
-        {/* {loading && (
-          <div className="text-center absolute w-full bottom-[50%] translate-y-[50%]">
-            <LoadingSpinner />
-          </div>
-        )} */}
-        {!loading && <div className="absolute bottom-[50%] translate-y-[50%] w-full ">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            freeMode={true}
-            modules={[FreeMode]}
-          >
-            {certeficateList.map((page, pIdex) => (
-              <SwiperSlide key={pIdex}>
-                <div className="grid md:grid-rows-2 grid-rows-3 grid-flow-col">
-                  {page.map((value, index) => (
-                    <Certeficate  certeficate={value} key={index} />
-                  ))}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>}
+        <div className="absolute bottom-[50%] translate-y-[50%] w-[99%] right-0 rounded-[50px] overflow-clip p-1">
+          {" "}
+          {loading && <LoadingSpinner />}
+          {!loading && (
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              freeMode={true}
+              modules={[FreeMode]}
+            >
+              {certeficateList.map((page, pIdex) => (
+                <SwiperSlide key={pIdex}>
+                  <div className="grid md:grid-rows-2 grid-rows-3 grid-flow-col">
+                    {page.map((value, index) => (
+                      <Certeficate certeficate={value} key={index} />
+                    ))}
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+        </div>
       </div>
     </div>
   );
