@@ -1,45 +1,31 @@
-const useProjects = () => {
-  interface link {
-    platformIcon: string;
-    link: string;
-  }
-  interface project {
-    name: string;
-    description: string;
-    imgLink: string;
-    links: Array<link>;
-    technologies: string;
-  }
-  const projects: Array<project> = [
-    {
-      name: "Chantech",
-      description:
-        "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
-      imgLink: "chantech.png",
-      links: [
-        {
-          platformIcon: "github.svg",
-          link: "https://github.com/chechna9/Chantech-flutterApp",
-        },
-      ],
-      technologies: "Flutter , NodeJs , MYSQL",
-    },
-    {
-      name: "Chantech",
-      description:
-        "Mobile  application used for managing sites , can handle workers , equipments and tasks ...",
-      imgLink: "chantech.png",
-      links: [
-        {
-          platformIcon: "github.svg",
-          link: "https://github.com/chechna9/Chantech-flutterApp",
-        },
-      ],
-      technologies: "Flutter , NodeJs , MYSQL",
-    },
-  ];
+import project from "../utils/interfaces/projectInterface";
 
-  return { projects };
-};
+
+const useProjects = new Promise<Array<project>>((resolve, reject) => {
+  const projects: Array<project> = [];
+  fetch("http://localhost:1337/api/projects")
+    .then((response) => response.json())
+    .then((res) => {
+      res.data.forEach((element: any) => {
+        let rawProject = element.attributes;
+        let project: project = {
+          name: rawProject.name,
+          description: rawProject.description,
+          links: [
+            {
+              link: rawProject.link,
+              platformIcon: rawProject.platformIcon,
+            },
+          ],
+          technologies: rawProject.technologies,
+          imgLink: "chantech.png",
+        };
+        projects.push(project);
+      });
+      resolve(projects);
+    }).catch((error)=>{
+      reject(error);
+    });
+});
 
 export default useProjects;
