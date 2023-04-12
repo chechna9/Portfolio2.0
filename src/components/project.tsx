@@ -16,11 +16,11 @@ const Project:React.FC<projectProps> = (props:projectProps) => {
       />
       <div className="bg-sec rounded-3xl text-white text-xl py-8 px-4 shadow-2xl flex flex-col justify-evenly mx-10 md:w-[40%]  ">
         <p className="mb-4">
-          <strong>Name : </strong>
-          {project.name}
+          <strong>{project.name}</strong>
+          
         </p>
-        <p className="mb-4">
-          <strong>Description : </strong>
+        <p className="mb-4 ml-2">
+         
           {project.description}
         </p>
         <p className="mb-4">
