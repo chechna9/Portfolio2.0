@@ -9,7 +9,7 @@ const useCerteficates = new Promise<Array<Array<certeficate>>>(
       .then((res) => {
         res.data[0].attributes.img.data.forEach((element: any) => {
           let rawCerteficate = element.attributes;
-          console.log(rawCerteficate);
+          
           let cert: certeficate = {
             imgUrl: `${baseUrl}${rawCerteficate.url}`,
           };

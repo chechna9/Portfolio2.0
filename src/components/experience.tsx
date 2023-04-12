@@ -1,13 +1,10 @@
-interface experience {
-  imgPath: string;
-  title: string;
-  description: string;
-}
+import experience from "../utils/interfaces/experienceInterface";
+
 interface experienceProps {
-  expreience: experience;
+  experience: experience;
 }
-const Experience: React.FC<experienceProps> = (experienceProps) => {
-  const experience = experienceProps.expreience;
+const Experience: React.FC<experienceProps> = ({experience}) => {
+  // const experience = experienceProps.experience;
 
   return (
     <div className="bg-prim1 rounded-3xl flex flex-col md:flex-row space-x-3  text-white md:w-[80vw] w-[50vw] pb-8 mx-auto max-w-3xl pr-2 ">

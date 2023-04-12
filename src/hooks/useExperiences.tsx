@@ -1,28 +1,25 @@
-import { myPict } from "../utils/assets";
-const useExperiences = () => {
-    interface experience{
-        imgPath:string,
-        title:string,
-        description:string,
-    }
-    const experiences:Array<experience> = [
-        {
-            imgPath:myPict,
-            title:"Participant at  Haick  23",
-            description:"Datathon hosted by School of Ai Algiers",
-        },
-        {
-            imgPath:myPict,
-            title:"Participant at  Haick  23",
-            description:"Datathon hosted by School of Ai Algiers",
-        },
-        {
-            imgPath:myPict,
-            title:"Participant at  Haick  23",
-            description:"Datathon hosted by School of Ai Algiers",
-        },
-    ];
-    return experiences;
-}
- 
+
+import baseUrl from "../utils/constants";
+import experience from "../utils/interfaces/experienceInterface";
+const useExperiences = new Promise<Array<experience>>((resolve, reject) => {
+  const experiences: Array<experience> = [];
+  fetch(`${baseUrl}/api/experiences?populate=*`)
+    .then((response) => response.json())
+    .then((res) => {
+      res.data.forEach((element: any) => {
+        let rawExperience = element.attributes;
+        let experience: experience = {
+          title: rawExperience.title,
+          description: rawExperience.description,
+          
+          imgPath: `${baseUrl}${rawExperience.img.data.attributes.url}`,
+        };
+        experiences.push(experience);
+      });
+      resolve(experiences);
+    }).catch((error)=>{
+      reject(error);
+    });
+});
+
 export default useExperiences;
