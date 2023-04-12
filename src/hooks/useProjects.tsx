@@ -7,6 +7,7 @@ const useProjects = new Promise<Array<project>>((resolve, reject) => {
   fetch(`${baseUrl}/api/projects?populate=*`)
     .then((response) => response.json())
     .then((res) => {
+      console.log(res);
       res.data.forEach((element: any) => {
         let rawProject = element.attributes;
         let project: project = {
