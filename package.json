@@ -10,6 +10,7 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
+    "axios": "^1.3.5",
     "lightbox.js-react": "^0.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

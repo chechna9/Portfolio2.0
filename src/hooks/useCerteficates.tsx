@@ -4,14 +4,15 @@ const useCerteficates = new Promise<Array<Array<certeficate>>>(
   (resolve, reject) => {
     const certeficatesList: Array<certeficate> = [];
 
-    fetch(`${baseUrl}/api/certeficates?populate=*`)
+    fetch(`${baseUrl}certeficates`)
       .then((response) => response.json())
       .then((res) => {
-        res.data[0].attributes.img.data.forEach((element: any) => {
-          let rawCerteficate = element.attributes;
+        console.log(res)
+        res.forEach((element: any) => {
+          let rawCerteficate = element;
           
           let cert: certeficate = {
-            imgUrl: `${baseUrl}${rawCerteficate.url}`,
+            imgUrl: rawCerteficate.img,
           };
           certeficatesList.push(cert);
         });

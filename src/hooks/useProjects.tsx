@@ -1,14 +1,14 @@
 import baseUrl from "../utils/constants";
 import project from "../utils/interfaces/projectInterface";
 
-
 const useProjects = new Promise<Array<project>>((resolve, reject) => {
+ 
   const projects: Array<project> = [];
-  fetch(`${baseUrl}/api/projects?populate=*`)
+  fetch(`${baseUrl}projects`)
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
-      res.data.forEach((element: any) => {
+     
+      res.forEach((element: any) => {
         let rawProject = element.attributes;
         let project: project = {
           name: rawProject.name,
@@ -20,12 +20,13 @@ const useProjects = new Promise<Array<project>>((resolve, reject) => {
             },
           ],
           technologies: rawProject.technologies,
-          imgLink: `${baseUrl}${rawProject.imgLink.data.attributes.url}`,
+          imgLink: rawProject.img,
         };
         projects.push(project);
       });
       resolve(projects);
-    }).catch((error)=>{
+    })
+    .catch((error) => {
       reject(error);
     });
 });
