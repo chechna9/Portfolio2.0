@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
 interface Bio {
@@ -169,7 +170,7 @@ const useBio = (): Bio => {
   };
   useEffect(() => {
     fillIt();
-  }, );
+  }, []);
 
   return bio;
 };
