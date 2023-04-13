@@ -169,7 +169,7 @@ const useBio = (): Bio => {
   };
   useEffect(() => {
     fillIt();
-  }, []);
+  }, );
 
   return bio;
 };
