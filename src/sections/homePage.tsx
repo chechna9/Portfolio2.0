@@ -46,7 +46,7 @@ const Home: React.FC = () => {
               {`"${bio.status}"`} ,
             </p>
 
-            <p className="text-white">
+            <div className="text-white">
               <span className="text-blue-500">skills : </span>
               {"["}
 
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
               </div>
 
               {"]"}
-            </p>
+            </div>
           </div>
           <div className="flex flex-col justify-start rotate-180">
             <h1 className="text-white font-bold text-4xl ml-10 animate-slowed_bounce ">

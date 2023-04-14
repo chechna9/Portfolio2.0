@@ -7,7 +7,7 @@ const useCerteficates = new Promise<Array<Array<certeficate>>>(
     fetch(`${baseUrl}certeficates`)
       .then((response) => response.json())
       .then((res) => {
-        console.log(res)
+        
         res.forEach((element: any) => {
           let rawCerteficate = element;
           

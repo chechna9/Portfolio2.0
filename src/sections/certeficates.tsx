@@ -42,7 +42,7 @@ const Certeficates = () => {
             >
               {certeficateList.map((page, pIdex) => (
                 <SwiperSlide key={pIdex}>
-                  <div className="grid md:grid-rows-2 grid-rows-3 grid-flow-col">
+                  <div className="grid sm:grid-rows-2 grid-rows-3 grid-flow-col">
                     {page.map((value, index) => (
                       <Certeficate certeficate={value} key={index} />
                     ))}

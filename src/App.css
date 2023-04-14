@@ -47,3 +47,16 @@
   color: white;
   scale: 0.75;
 }
+
+@media screen and (max-width:480px)  {
+  #projects_swiper .swiper-button-next,
+#projects_swiper .swiper-button-prev {
+
+  scale: 0.5;
+}
+#exprSwiper .swiper-button-next,
+#exprSwiper .swiper-button-prev {
+  
+  scale: 0.5;
+}
+}
