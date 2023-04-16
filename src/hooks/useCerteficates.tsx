@@ -1,14 +1,12 @@
-import baseUrl from "../utils/constants";
+// import baseUrl from "../utils/constants";
 import certeficate from "../utils/interfaces/certeficateInterface";
+import data from "../data/certeficates";
 const useCerteficates = new Promise<Array<Array<certeficate>>>(
   (resolve, reject) => {
     const certeficatesList: Array<certeficate> = [];
 
-    fetch(`${baseUrl}certeficates`)
-      .then((response) => response.json())
-      .then((res) => {
         
-        res.forEach((element: any) => {
+        data.forEach((element: any) => {
           let rawCerteficate = element;
           
           let cert: certeficate = {
@@ -23,10 +21,7 @@ const useCerteficates = new Promise<Array<Array<certeficate>>>(
           paginated.push(chunk);
         }
         resolve(paginated);
-      })
-      .catch((error) => {
-        reject(error);
-      });
+     
   }
 );
 
