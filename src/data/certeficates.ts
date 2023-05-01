@@ -41,5 +41,8 @@ let data = [
   {
     img: "https://res.cloudinary.com/dmgeaamqy/image/upload/v1681448369/portfolioAssets/certeficates/Ahmed_Yacine_Bouchouareb_-_Pandas_1_ptkmex.png",
   },
+  {
+    img: "https://res.cloudinary.com/dmgeaamqy/image/upload/v1682970318/portfolioAssets/certeficates/ts_analysis_vd55zu.png",
+  },
 ];
 export default data;
