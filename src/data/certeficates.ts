@@ -32,5 +32,8 @@ let data = [
   {
     img: "https://res.cloudinary.com/dmgeaamqy/image/upload/v1682970318/portfolioAssets/certeficates/ts_analysis_vd55zu.png",
   },
+{
+    img: "https://res.cloudinary.com/dmgeaamqy/image/upload/v1684272419/portfolioAssets/certeficates/intro_nlp_ih3qhn.png",
+  },
 ];
 export default data;
