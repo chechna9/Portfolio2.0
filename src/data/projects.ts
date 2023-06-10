@@ -31,7 +31,7 @@ let data = [
         "Web app that predict the win chance of two teams in Valorant based on an Ai model.",
       technologies: "React , Flask , sklearn ",
       platformIcon: "internetIcon.svg",
-      link: "https://github.com/chechna9/valorant_win_prediction_UI",
+      link: "https://valorant-win-prediction.vercel.app/",
       img: "https://res.cloudinary.com/dmgeaamqy/image/upload/v1686423062/portfolioAssets/projects/valoPred_cdly2n.png",
     },
   },
