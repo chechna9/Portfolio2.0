@@ -12,8 +12,9 @@ interface Bio {
   ds: string;
   loading: string;
 }
+
 const useBio = (): Bio => {
-  const counter = (timout?:number) => new Promise((resolve) => setTimeout(resolve,timout?? 50));
+  const counter = (timeout?: number) => new Promise((resolve) => setTimeout(resolve, timeout ?? 50));
 
   const [bio, setBio] = useState<Bio>({
     fname: "",
@@ -28,146 +29,29 @@ const useBio = (): Bio => {
   });
 
   const fillIt = async () => {
-    let _fname = "Ahmed Yacine";
-    let _lname = "Bouchouareb";
-    let _status = "Artificial Intelligence & Data science student";
-    let _mob = "Mobile Development";
-    let _uiux = "UI/UX";
-    let _web = "Web Development";
-    let _ai = "Artificial Intelligence";
-    let _ds = "Data Science";
-    let _loading = "Loading ...";
-  
-    //incremental fill
-    for (let i = 0; i <= _fname.length; i++) {
-  
-      setBio({
-        fname:_fname.slice(0,i),
-        lname: "",
-        status:"",
-        web: "",
-        mob: "",
-        uiux: "",
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
+    const fields = [
+      { key: "fname", value: "Ahmed Yacine" },
+      { key: "lname", value: "Bouchouareb" },
+      { key: "status", value: "Artificial Intelligence & Data science student" },
+      { key: "mob", value: "Mobile Development" },
+      { key: "web", value: "Web Development" },
+      { key: "uiux", value: "UI/UX" },
+      { key: "ai", value: "Artificial Intelligence" },
+      { key: "ds", value: "Data Science" },
+      { key: "loading", value: "Loading ..." },
+    ];
+
+    for (const { key, value } of fields) {
+      for (let i = 0; i <= value.length; i++) {
+        setBio((prevBio) => ({
+          ...prevBio,
+          [key]: value.slice(0, i),
+        }));
+        await counter();
+      }
     }
-    for (let i = 0; i <= _lname.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname.slice(0,i),
-        status: "",
-        web: "",
-        mob: "",
-        uiux: "",
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _status.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status: _status.slice(0,i),
-        mob: "",
-        web: "",
-        uiux: "",
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _mob.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob.slice(0,i),
-        web: "",
-        uiux: "",
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _web.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob,
-        web:  _web.slice(0,i),
-        uiux: "",
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _uiux.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob,
-        web:  _web,
-        uiux: _uiux.slice(0,i),
-        ai: "",
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _ai.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob,
-        web:  _web,
-        uiux: _uiux,
-        ai: _ai.slice(0,i),
-        ds: "",
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _ds.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob,
-        web:  _web,
-        uiux: _uiux,
-        ai: _ai,
-        ds: _ds.slice(0,i),
-        loading: "",
-      });
-      await counter();
-    }
-    for (let i = 0; i <= _loading.length; i++) {
-      setBio({
-        fname:_fname,
-        lname: _lname,
-        status:_status,
-        mob: _mob,
-        web:  _web,
-        uiux: _uiux,
-        ai: _ai,
-        ds: _ds,
-        loading: _loading.slice(0,i),
-      });
-      await counter();
-    }
-   
   };
+
   useEffect(() => {
     fillIt();
   }, []);
