@@ -1,11 +1,15 @@
 import useBio from "../hooks/useBio";
 import { handEmojie, myPict } from "../utils/assets";
-
+import { motion } from "framer-motion";
 const Home: React.FC = () => {
   const bio = useBio();
   return (
-    <div className="bg-prim2">
-      <div
+    <div className="bg-prim2 overflow-clip">
+      <motion.div
+      animate={{ x: 0, opacity:1 }}
+       initial={{ x:+500 , opacity: 0}}
+       transition={{ delay: 0.2 }}
+       viewport={{ once: true, amount: 0 }}
         className="bg-prim1 h-screen flex flex-col md:flex-row justify-evenly  items-center md:ml-10 ml-5 md:rounded-bl-[200px] rounded-bl-[100px]"
         id="home"
       >
@@ -68,7 +72,7 @@ const Home: React.FC = () => {
             </h1>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import useExperiences from "../hooks/useExperiences";
 import { useEffect, useState } from "react";
 import experience from "../utils/interfaces/experienceInterface";
 import LoadingSpinner from "../components/loadingSpinner";
+import { motion } from "framer-motion";
+
 const Experiences = () => {
   const [loading,setLoading] = useState(true);
   const [listExperiences,setListExperiences] = useState<Array<experience>>([]);
@@ -21,8 +23,14 @@ const Experiences = () => {
     );
   },[]);
   return (
-    <div className="bg-prim1">
-      <div className="bg-prim2 h-screen py-10 md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] relative">
+    <div className="bg-prim1 overflow-clip">
+      <motion.div 
+       initial={{ x: -200, opacity: 0}}
+       whileInView={{ x: 0, opacity: 1 }}
+       transition={{ease: "easeOut", delay: 0.2 }}
+       viewport={{ once: false, amount: "some" }}
+
+      className="bg-prim2 h-screen py-10 md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] relative">
         <div className="relative w-fit h-fit mb-8 mx-auto">
           <h1 className="text-white font-bold  md:text-4xl sm:text-2xl text-xl">
             Some Wonderful Experiences
@@ -55,7 +63,7 @@ const Experiences = () => {
             ))}
           </Swiper>
         </div>}
-      </div>
+      </motion.div>
     </div>
   );
 };

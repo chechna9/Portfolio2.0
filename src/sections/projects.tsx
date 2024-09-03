@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import project from "../utils/interfaces/projectInterface";
 import LoadingSpinner from "../components/loadingSpinner";
+import { motion } from "framer-motion";
+
 const Projects = () => {
   const [projects, setProjects] = useState<Array<project>>([]);
   const [loading, setLoading] = useState(true);
@@ -19,8 +21,12 @@ const Projects = () => {
     });
   }, []);
   return (
-    <div className="bg-prim1">
-      <div
+    <div className="bg-prim1 overflow-clip">
+      <motion.div
+      initial={{ x: -200, opacity:0}}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ease: "easeOut", delay: 0.2 }}
+      viewport={{ once: false, amount: 0.1 }}
         className="bg-prim2 min-h-screen py-10   md:mr-10 mr-5 md:rounded-br-[200px] rounded-br-[100px] md:rounded-tr-[200px] rounded-tr-[100px] relative flex flex-col"
         id="projects"
       >
@@ -56,7 +62,7 @@ const Projects = () => {
             </Swiper>
           </div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
