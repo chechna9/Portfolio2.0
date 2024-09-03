@@ -3,6 +3,33 @@ let data = [
   {
     id: 1,
     attributes: {
+      name: "Kurio",
+      description:
+        "Mobile application that uses that uses generative ai to provide a customised learning materials for kids in form of text books , story books and podcasts . Secured the thrid prize of 4k $ in A2SV 2023 hackathon",
+      technologies: "Flutter, NodeJs, Generative AI apis",
+      platformIcon: "internetIcon.svg",
+      link: "https://www.youtube.com/watch?v=pvr8QMkFKgc",
+      
+      img: `https://res.cloudinary.com/dmgeaamqy/image/upload/${quality}/v1725198433/portfolioAssets/projects/kurio_tubwgh.png`,
+    },
+  },
+  {
+    id: 1,
+    attributes: {
+      name: "Rayhane",
+      description:
+        "E-learning mobile app for end users , with features such as: payment system, multy language support, rating system, and more...",
+      technologies: "Flutter",
+      platformIcon: "internetIcon.svg",
+      link: "https://play.google.com/store/apps/details?id=dz.createch.rayhane&pcampaignid=web_share",
+      
+      img: `https://res.cloudinary.com/dmgeaamqy/image/upload/${quality}/v1725198442/portfolioAssets/projects/Rayhane_ylygfe.png`,
+    },
+  },
+  
+  {
+    id: 1,
+    attributes: {
       name: "Chantech",
       description:
         "Mobile application used for managing sites, can handle workers, equipment, and tasks...",
@@ -58,6 +85,19 @@ let data = [
       platformIcon: "github.svg",
       link: "https://github.com/chechna9/Devfest-Hackathon2021",
       img: `https://res.cloudinary.com/dmgeaamqy/image/upload/${quality}/v1681448361/portfolioAssets/projects/devfest21_ymkkvs.png`,
+    },
+  },
+  {
+    id: 1,
+    attributes: {
+      name: "Dash Ai",
+      description:
+        "Desktop web app for built during a hackathon for analysing clients's feedbacks using a chatbot",
+      technologies: "React Js , tailwind css",
+      platformIcon: "github.svg",
+      link: "https://lablab-hackathon-dash-ai.vercel.app/",
+      
+      img: `https://res.cloudinary.com/dmgeaamqy/image/upload/${quality}/v1725198437/portfolioAssets/projects/dash_ai_dtq7fa.png`,
     },
   },
   {

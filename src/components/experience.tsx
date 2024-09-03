@@ -12,7 +12,7 @@ const Experience: React.FC<experienceProps> = ({experience}) => {
       <img
         src={experience.imgPath}
         alt=""
-        className="rounded-3xl md:w-[40%] w-[45vw] object-fill -translate-x-[10%] "
+        className="rounded-3xl md:w-[40%] w-[45vw] object-fit -translate-x-[10%] "
       />
       {/* event content */}
       <div className="flex flex-col pt-2 text">
