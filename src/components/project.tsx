@@ -1,5 +1,6 @@
 import React from "react";
 import project from "../utils/interfaces/projectInterface";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface projectProps{
   project:project,
@@ -9,7 +10,7 @@ const Project:React.FC<projectProps> = (props:projectProps) => {
   
   return (
     <div className="flex md:flex-row flex-col justify-evenly items-center">
-      <img
+      <LazyLoadImage
         src={ project.imgLink}
         alt=""
         className="md:w-[30vw] w-[60vw] max-w-sm mb-3 md:mb-0"

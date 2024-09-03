@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Popup from "reactjs-popup";
 import { PopupActions } from "reactjs-popup/dist/types";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import certeficate from "../utils/interfaces/certeficateInterface";
 interface certeficateProps {
   certeficate: certeficate;
@@ -30,7 +32,7 @@ const Certeficate: React.FC<certeficateProps> = ({ certeficate }) => {
             <AiOutlineCloseCircle color="red" />
           </button>
 
-          <img src={certeficate.imgUrl} alt="" className="" />
+          <LazyLoadImage src={certeficate.imgUrl} alt="" className="" />
         </div>
       </Popup>
     </div>

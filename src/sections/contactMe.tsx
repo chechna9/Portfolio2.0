@@ -8,7 +8,7 @@ const ContactMe = () => {
       <div className="flex flex-row justify-evenly m-auto w-full">
         <div className="flex flex-row  items-center">
           <img src={emailIcon} alt="" className="w-7 mr-2" />
-          <p className="text-white text-sm">ja_bouchouareb@esi.dz</p>
+          <p className="text-white text-sm">bayacine9919@gmail.com</p>
         </div>
         <div className="md:flex md:flex-row grid grid-cols-2 gap-5  justify-evenly">
           <a href="https://www.linkedin.com/in/ahmedyacinebouchouareb/" target="blank">
