@@ -25,6 +25,14 @@ const ContactMe = () => {
           </a>
         </div>
       </div>
+      {/* download my cv button */}
+      <a
+        href="/my_cv.pdf"
+        download
+        className="bg-prim2 text-white px-4 py-2 rounded-md mt-5 mx-auto"
+      >
+        Download my CV
+      </a>
     </div>
   );
 };
