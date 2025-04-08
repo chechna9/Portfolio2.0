@@ -32,7 +32,7 @@ const useBio = (): Bio => {
     const fields = [
       { key: "fname", value: "Ahmed Yacine" },
       { key: "lname", value: "Bouchouareb" },
-      { key: "status", value: "Computer science engineer specialized in Ai & Ds" },
+      { key: "status", value: "Computer science engineer" },
       { key: "mob", value: "Mobile Development" },
       { key: "web", value: "Web Development" },
       { key: "uiux", value: "UI/UX" },

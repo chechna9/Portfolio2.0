@@ -1,5 +1,36 @@
 const quality = "q_10";
-let data = [
+type PlatformIcon =
+  | "notAvailable.svg"
+  | "internetIcon.svg"
+  | "github.svg";
+
+interface ProjectAttributes {
+  name: string;
+  description: string;
+  platformIcon: PlatformIcon;
+  technologies: string;
+  link: string;
+  img: string;
+}
+
+interface Project {
+  id: number;
+  attributes: ProjectAttributes;
+}
+let data:Project[] = [
+  {
+    id: 1,
+    attributes: {
+      name: "Khutwa Guide",
+      description:
+        "I contributed to the development of a mobile app aimed at assisting pilgrimage guides in managing pilgrims throughout their trip, including hotel room arrangements and other features.",
+      platformIcon: "notAvailable.svg",
+      technologies: "Flutter",
+
+      link: "#",
+      img: `https://res.cloudinary.com/dmgeaamqy/image/upload/${quality}/v1744136243/portfolioAssets/projects/khutwaApp_gqnlwh.png`,
+    },
+  },
   {
     id: 1,
     attributes: {
